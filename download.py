@@ -69,11 +69,11 @@ def main():
 
     image_ids = [entry["image_id"] for entry in annotation_data]
 
-    # Make dir for images files
+    # Make dir for image files
     if not os.path.exists(IMAGE_DIR):
         os.makedirs(IMAGE_DIR)
 
-    # Make dir for images files
+    # Make dir for text files
     if not os.path.exists(META_DIR) and SAVE_PHOTOGRAPHER:
         os.makedirs(META_DIR)
 
