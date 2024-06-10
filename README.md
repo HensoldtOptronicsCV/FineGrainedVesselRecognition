@@ -17,9 +17,11 @@ Sort images by class or superclass:
 
 If you use Military MARVEL in your research, please cite:
 
-"`@InProceedings{KarusCVPRW2024,   
-   Title = {{Towards Explainable Visual Vessel Recognition Using Fine-Grained Classification and Image Retrieval}},   
-   Author = {Heiko Karus and Friedhelm Schwenker and Michael Munz and Michael Teutsch},   
-   Booktitle = {IEEE CVPR Workshops},   
-   Year = {2024}   
-}`"
+```
+@InProceedings{KarusCVPRW2024,   
+Title = {{Towards Explainable Visual Vessel Recognition Using Fine-Grained Classification and Image Retrieval}},   
+Author = {Heiko Karus and Friedhelm Schwenker and Michael Munz and Michael Teutsch},   
+Booktitle = {IEEE CVPR Workshops},   
+Year = {2024}   
+}
+```
