@@ -11,12 +11,18 @@ The code can be excecuted using Python3.10, the dependencies can be found in `re
 pip install -r requirements.txt
 ```
 
-Downloading Military MARVEL dataset:
-> In order to download the Military MARVEL dataset, download.py a Python script must be run.
+## Downloading Military MARVEL dataset
+In order to download the Military MARVEL dataset, run the following command:
+```
+python download.py
+```
 
-Sort images by class or superclass:
-> In order to sort the images of the Military MARVEL dataset, sort_by.py a Python script must be run. Set `SORT_BY = "class"` if you want to create the fine-grained dataset with 137 classes and `SORT_BY = "superclass"` to create the less fine-grained dataset with 11 classes.
-> The file structure of the GT file `metadata.json` looks as follows:
+## Sort images by class or superclass:
+In order to sort the images of the Military MARVEL dataset, run the following command:
+```
+python sort_by.py
+```
+Set `SORT_BY = "class"` if you want to create the fine-grained dataset with 137 classes and `SORT_BY = "superclass"` to create the less fine-grained dataset with 11 classes. The file structure of the GT file `metadata.json` looks as follows:
 ```json
 [{"image_id": "1337893", "superclass": "Auxiliaries", "class": "Schwedeneck class"}, {...}]
 ```
