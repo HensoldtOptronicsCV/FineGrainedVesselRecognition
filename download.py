@@ -11,9 +11,9 @@ import re
 from bs4 import BeautifulSoup
 import tqdm
 
-SAVE_PHOTOGRAPHER = 0
-NUMBER_OF_WORKERS = 10
-FILE_TO_DOWNLOAD_FROM = "metadata.json"
+SAVE_PHOTOGRAPHER = 0 # Set SAVE_PHOTOGRAPHER = 1, if you also want to save the photographer of each image
+NUMBER_OF_WORKERS = 10 # Number of threads for download
+FILE_TO_DOWNLOAD_FROM = "metadata.json" # Name of GT file, to get IDs from
 SOURCE_LINK = "https://www.shipspotting.com/photos/"
 IMAGE_DIR = os.path.join(os.getcwd(), "data", "images")
 META_DIR = os.path.join(os.getcwd(), "data", "metadata")
@@ -22,8 +22,9 @@ META_DIR = os.path.join(os.getcwd(), "data", "metadata")
 def download_image(file_id: str):
     """This function downloads an image from a given URL and saves it
     to a specified directory. It also saves the author's name in a text
-    file if specified. If the image is deleted, it will not save anything.
-
+    file if specified. If the image was deleted on the original website, 
+    this image will be skipped and nothing will be downloaded or saved.
+    
     Args:
         file_id (str): The ID of the file to retrieve the image from.
     """
@@ -36,11 +37,11 @@ def download_image(file_id: str):
         images = [img for img in soup.findAll("img")]
         image_links = [each.get("src") for each in images]
 
-        for each in image_links:
-            if each is not None:
-                if "http" in each and "jpg" in each and "photos/big" in each:
-                    filename = each.split("/")[-1].split("?")[0]
-                    req = Request(each, headers={"User-Agent": "Mozilla/5.0"})
+        for image_link in image_links:
+            if image_link is not None:
+                if "http" in image_link and "jpg" in image_link and "photos/big" in image_link:
+                    filename = image_link.split("/")[-1].split("?")[0]
+                    req = Request(image_link, headers={"User-Agent": "Mozilla/5.0"})
                     web_file = urlopen(req, timeout=300)
                     with open(os.path.join(IMAGE_DIR, filename), "wb") as image_file:
                         image_file.write(web_file.read())
@@ -62,7 +63,6 @@ def download_image(file_id: str):
 
 
 def main():
-
     with open(FILE_TO_DOWNLOAD_FROM, "r", encoding="utf-8") as annotation_file:
         annotation_data = json.load(annotation_file)
 
@@ -80,7 +80,7 @@ def main():
     downloaded_ids = [file.stem for file in Path(IMAGE_DIR).glob("*.jpg")]
     image_ids = list(set(image_ids) - set(downloaded_ids))
 
-    # Make the Pool of workers
+    # Make the pool of workers
     pool = ThreadPool(NUMBER_OF_WORKERS)
 
     # Open the URLs in their own threads and save the images
