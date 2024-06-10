@@ -59,6 +59,7 @@ def download_image(file_id: str):
 
     except HTTPError:
         # Image was deleted
+        print("Image ID %s was deleted!" % file_id)
         pass
 
 
