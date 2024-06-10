@@ -22,7 +22,7 @@ In order to sort the images of the Military MARVEL dataset, run the following co
 ```
 python sort_by.py
 ```
-Set `SORT_BY = "class"` if you want to create the fine-grained dataset with 137 classes and `SORT_BY = "superclass"` to create the less fine-grained dataset with 11 classes. The file structure of the GT file `metadata.json` looks as follows:
+This will create folders for each unique class and puts the corresponding images in it. The structure can be used by `ImageFolder` class of PyTorch. Set `SORT_BY = "class"` if you want to create the fine-grained dataset with 137 classes and `SORT_BY = "superclass"` to create the less fine-grained dataset with 11 classes. The file structure of the GT file `metadata.json` looks as follows:
 ```json
 [{"image_id": "1337893", "superclass": "Auxiliaries", "class": "Schwedeneck class"}, {...}]
 ```
