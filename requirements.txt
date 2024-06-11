@@ -1,0 +1,41 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: linux-64
+beautifulsoup4=4.12.3=pypi_0
+black=24.4.0=pypi_0
+bs4=0.0.2=pypi_0
+bzip2=1.0.8=h5eee18b_5
+ca-certificates=2024.3.11=h06a4308_0
+certifi=2024.2.2=pypi_0
+charset-normalizer=3.3.2=pypi_0
+click=8.1.7=pypi_0
+idna=3.7=pypi_0
+ld_impl_linux-64=2.38=h1181459_1
+libffi=3.4.4=h6a678d5_0
+libgcc-ng=11.2.0=h1234567_1
+libgomp=11.2.0=h1234567_1
+libstdcxx-ng=11.2.0=h1234567_1
+libuuid=1.41.5=h5eee18b_0
+lxml=5.2.1=pypi_0
+mypy-extensions=1.0.0=pypi_0
+ncurses=6.4=h6a678d5_0
+openssl=3.0.13=h7f8727e_0
+packaging=24.0=pypi_0
+pathspec=0.12.1=pypi_0
+pip=23.3.1=py310h06a4308_0
+platformdirs=4.2.0=pypi_0
+python=3.10.14=h955ad1f_0
+readline=8.2=h5eee18b_0
+requests=2.31.0=pypi_0
+setuptools=68.2.2=py310h06a4308_0
+soupsieve=2.5=pypi_0
+sqlite=3.41.2=h5eee18b_0
+tk=8.6.12=h1ccaba5_0
+tomli=2.0.1=pypi_0
+tqdm=4.66.2=pypi_0
+typing-extensions=4.11.0=pypi_0
+tzdata=2024a=h04d1e81_0
+urllib3=2.2.1=pypi_0
+wheel=0.41.2=py310h06a4308_0
+xz=5.4.6=h5eee18b_0
+zlib=1.2.13=h5eee18b_0
