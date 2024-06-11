@@ -2,8 +2,7 @@
 
 This repository shows how to download the Military MARVEL Dataset and sort it by class or superclass.
 
-Here is the direct link to the paper:\
-TODO
+Here is the direct link to the paper: [click me](https://openaccess.thecvf.com/content/CVPR2024W/TCV2024/html/Karus_Towards_Explainable_Visual_Vessel_Recognition_Using_Fine-Grained_Classification_and_Image_CVPRW_2024_paper.html)
 
 The code can be excecuted using Python3.10, the dependencies can be found in `requirements.txt` and they can be installed using:
 
@@ -32,10 +31,12 @@ This will create folders for each unique class and puts the corresponding images
 If you use Military MARVEL in your research, please cite:
 
 ```
-@InProceedings{KarusCVPRW2024,   
-Title = {{Towards Explainable Visual Vessel Recognition Using Fine-Grained Classification and Image Retrieval}},   
-Author = {Heiko Karus and Friedhelm Schwenker and Michael Munz and Michael Teutsch},   
-Booktitle = {IEEE CVPR Workshops},   
-Year = {2024}   
+@InProceedings{Karus_2024_CVPR,
+    author    = {Karus, Heiko and Schwenker, Friedhelm and Munz, Michael and Teutsch, Michael},
+    title     = {Towards Explainable Visual Vessel Recognition Using Fine-Grained Classification and Image Retrieval},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month     = {June},
+    year      = {2024},
+    pages     = {82-92}
 }
 ```
