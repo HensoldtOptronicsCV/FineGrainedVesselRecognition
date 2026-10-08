@@ -4,24 +4,58 @@ This repository shows how to download the Military MARVEL Dataset and sort it by
 
 Here is the direct link to the paper: [click me](https://openaccess.thecvf.com/content/CVPR2024W/TCV2024/html/Karus_Towards_Explainable_Visual_Vessel_Recognition_Using_Fine-Grained_Classification_and_Image_CVPRW_2024_paper.html)
 
-The code can be excecuted using Python3.10, the dependencies can be found in `requirements.txt` and they can be installed using:
+## Installation
 
+The code can be run with Python 3.10.
+
+It is recommended to use a virtual environment.
+
+### Linux / macOS
+
+Create and activate the virtual environment:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
 ```
+
+### Windows
+
+Create and activate the virtual environment:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+### Install dependencies
+
+Install the required dependencies from `requirements.txt`:
+
+```bash
 pip install -r requirements.txt
 ```
 
+Afterwards, run the script from the activated virtual environment.
+
 ## Downloading Military MARVEL dataset
+
 In order to download the Military MARVEL dataset, run the following command:
-```
+
+```bash
 python download.py
 ```
 
-## Sort images by class or superclass:
+## Sort images by class or superclass
+
 In order to sort the images of the Military MARVEL dataset, run the following command:
-```
+
+```bash
 python sort_by.py
 ```
+
 This will create folders for each unique class and puts the corresponding images in it. The structure can be used by `ImageFolder` class of PyTorch. Set `SORT_BY = "class"` if you want to create the fine-grained dataset with 137 classes and `SORT_BY = "superclass"` to create the less fine-grained dataset with 11 classes. The file structure of the GT file `metadata.json` looks as follows:
+
 ```json
 [{"image_id": "1337893", "superclass": "Auxiliaries", "class": "Schwedeneck class"}, {...}]
 ```
